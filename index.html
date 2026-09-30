@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunrise Care Hospital</title>
+<meta name="description" content="Sunrise Care Hospital: departments, doctors, services and online appointments.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href="#home"><span class="mark" aria-hidden="true">+</span> Sunrise Care</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" class="nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#departments">Departments</a>
+      <a href="#doctors">Doctors</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      <a class="btn small" href="#appointment">Book appointment</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section id="home" class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Care that starts on time and never rushes you.</h1>
+      <p class="lead">Sunrise Care Hospital has 24-hour emergency care, 12 specialist departments and doctors you can book online in under a minute.</p>
+      <div class="actions">
+        <a class="btn" href="#appointment">Book appointment</a>
+        <a class="btn ghost" href="#doctors">Find a doctor</a>
+      </div>
+    </div>
+    <aside class="hours" aria-label="Opening hours">
+      <h2>Today at Sunrise Care</h2>
+      <p class="status" id="openStatus">Checking hours…</p>
+      <dl>
+        <dt>Emergency</dt><dd>Open 24 hours</dd>
+        <dt>Outpatient (OPD)</dt><dd>8:00 am – 8:00 pm</dd>
+        <dt>Pharmacy</dt><dd>24 hours</dd>
+      </dl>
+      <a class="emergency" href="tel:+912012345678">Emergency: +91 20 1234 5678</a>
+    </aside>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="wrap two">
+    <div>
+      <h2>About us</h2>
+      <p>Sunrise Care opened in 2004 as a 40-bed community clinic. Today it is a 350-bed multi-speciality hospital serving more than 200,000 patients each year.</p>
+      <p>Our approach is simple: explain every step, keep waiting short and treat the whole person, not only the diagnosis.</p>
+    </div>
+    <ul class="facts">
+      <li><strong>350</strong> beds</li>
+      <li><strong>120+</strong> doctors</li>
+      <li><strong>22</strong> years of service</li>
+      <li><strong>24/7</strong> emergency and ICU</li>
+    </ul>
+  </div>
+</section>
+
+<section id="departments" class="section tint">
+  <div class="wrap">
+    <h2>Departments</h2>
+    <p class="sub">Select a department to see its doctors.</p>
+    <div class="grid" id="deptGrid"></div>
+  </div>
+</section>
+
+<section id="doctors" class="section">
+  <div class="wrap">
+    <h2>Our doctors</h2>
+    <div class="filters" id="filters" role="group" aria-label="Filter doctors by department"></div>
+    <div class="grid doctors" id="doctorGrid" aria-live="polite"></div>
+  </div>
+</section>
+
+<section id="services" class="section tint">
+  <div class="wrap">
+    <h2>Services</h2>
+    <div class="grid services">
+      <article><h3>Emergency and trauma</h3><p>Ambulance, resuscitation bay and trauma team on site around the clock.</p></article>
+      <article><h3>Diagnostics</h3><p>MRI, CT, X-ray, ultrasound and a full pathology lab. Most reports ready the same day.</p></article>
+      <article><h3>Surgery</h3><p>Six modular operating theatres, including day-care and minimally invasive surgery.</p></article>
+      <article><h3>Maternity</h3><p>Private labour rooms, a neonatal ICU and lactation support.</p></article>
+      <article><h3>Pharmacy</h3><p>24-hour in-house pharmacy with home delivery inside the city.</p></article>
+      <article><h3>Health check-ups</h3><p>Preventive packages for adults, seniors and working professionals.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="appointment" class="section">
+  <div class="wrap two">
+    <div>
+      <h2>Book an appointment</h2>
+      <p>Choose a department, a doctor and a time. Our team will call to confirm within two hours during OPD timings.</p>
+      <p class="note">For emergencies, do not use this form. Call +91 20 1234 5678.</p>
+    </div>
+    <form id="apptForm" novalidate>
+      <label>Full name
+        <input type="text" name="name" autocomplete="name" required>
+        <span class="err" data-for="name"></span>
+      </label>
+      <label>Phone number
+        <input type="tel" name="phone" autocomplete="tel" inputmode="numeric" required>
+        <span class="err" data-for="phone"></span>
+      </label>
+      <label>Department
+        <select name="dept" id="deptSelect" required></select>
+        <span class="err" data-for="dept"></span>
+      </label>
+      <label>Doctor
+        <select name="doctor" id="doctorSelect" required></select>
+        <span class="err" data-for="doctor"></span>
+      </label>
+      <div class="row">
+        <label>Date
+          <input type="date" name="date" id="dateInput" required>
+          <span class="err" data-for="date"></span>
+        </label>
+        <label>Time
+          <select name="time" required>
+            <option value="">Select time</option>
+            <option>9:00 am</option><option>10:00 am</option><option>11:00 am</option>
+            <option>12:00 pm</option><option>4:00 pm</option><option>5:00 pm</option><option>6:00 pm</option>
+          </select>
+          <span class="err" data-for="time"></span>
+        </label>
+      </div>
+      <button class="btn" type="submit">Request appointment</button>
+      <p class="ok" id="apptOk" role="status" hidden></p>
+    </form>
+  </div>
+</section>
+
+<section id="contact" class="section tint">
+  <div class="wrap two">
+    <div>
+      <h2>Contact us</h2>
+      <address>
+        Sunrise Care Hospital<br>
+        12 Health Avenue, Pune, Maharashtra 411001
+      </address>
+      <p>Reception: <a href="tel:+912012345678">+91 20 1234 5678</a><br>
+      Email: <a href="mailto:care@sunrisecare.example">care@sunrisecare.example</a></p>
+      <p>Visiting hours: 11:00 am – 1:00 pm and 5:00 pm – 7:00 pm</p>
+    </div>
+    <form id="contactForm" novalidate>
+      <label>Your name<input type="text" name="cname" required><span class="err" data-for="cname"></span></label>
+      <label>Email<input type="email" name="cemail" required><span class="err" data-for="cemail"></span></label>
+      <label>Message<textarea name="cmsg" rows="4" required></textarea><span class="err" data-for="cmsg"></span></label>
+      <button class="btn" type="submit">Send message</button>
+      <p class="ok" id="contactOk" role="status" hidden></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; <span id="year"></span> Sunrise Care Hospital. Sample website for demonstration.</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
